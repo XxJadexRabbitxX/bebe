@@ -90,15 +90,15 @@ func re_rand(b *int, e []int) {
 	//因此有必要在re_rand函數外的main函數或者在main裡執行另外的函數，來去更新grave
 	var btA_A, xxx int // 已知 函數判斷 永遠是以最初狀態而非動態
 	//var nononn bool
-	//btA_A = rand.Intn(51) + 1 //41+999999999 剛好一個亂數周期 每個數的機率會比較公平
-	btA_A = 1
+	btA_A = rand.Intn(10000015)%52 + 1 //41+999999999 剛好一個亂數周期 每個數的機率會比較公平
+	//btA_A = 1
 	if len(e) == 0 {
-		btA_A = rand.Intn(51) + 1
+		btA_A = rand.Intn(10000015)%52 + 1
 		//fmt.Printf("grave=nil ,bt 抽到=%d AAAA\n", btA_A)
 	} else if len(e) > 0 { //反之如果墳排有值
 		for xxx < len(e) { //製造迴圈
 			for btA_A == e[xxx] || btA_A == 0 { //若是 亂數 =ex
-				btA_A = rand.Intn(51) + 1
+				btA_A = rand.Intn(10000015)%52 + 1
 				//fmt.Printf("AAAA發現相同e[%d]=%d ,因此RE!抽到=%d AAAA\n", xxx, e[xxx], btA_A)
 				xxx = 0
 			}
